@@ -1,0 +1,21 @@
+[project]
+name = "skateucl"
+version = "1.0.0"
+description = "The official UCL Skate Club website."
+dependencies = [
+    "flask",
+]
+requires-python = ">= 3.8"
+authors = [
+    {name = "Mariusz Tang"},
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/TheKuroEver/UCL-Skate-Club"
+Issues = "https://github.com/TheKuroEver/UCL-Skate-Club/issues"
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
