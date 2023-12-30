@@ -23,6 +23,6 @@ def create_app(test_config=None):
 
     @app.route("/")
     def index():
-        return render_template("index.html.j2", active="Home")
+        return render_template("index.j2", active="Home")
 
     return app
