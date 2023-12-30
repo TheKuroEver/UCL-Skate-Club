@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{% block author %}Mariusz Tang{% endblock %}">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <title>{% block title %}{% endblock %} — SkateUCL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header id="nav-bar">
+        <img id="nav-bar-logo" src="{{ url_for('static', filename='logo.png') }}" alt="The SkateUCL logo.">
+        <button type="button" id="nav-bar-expand" onclick="document.getElementById('nav-bar-links').classList.toggle('expanded')">button</button>
+        <nav id="nav-bar-links">
+            <a class="nav-bar-link" href="">About us</a>
+            <a class="nav-bar-link" href="">Events</a>
+            <a class="nav-bar-link" href="">Equipment</a>
+            <a class="nav-bar-link" href="">Join us</a>
+        </nav>
+    </header>
+    <h1>{% block header %}{% endblock %}</h1>
+</body>
+</html>

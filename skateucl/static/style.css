@@ -1,0 +1,77 @@
+/* === Colours === */
+
+body {
+    --club-purple: #794992;
+    --club-blue: #89D8EF;
+}
+
+/* === Defaults === */
+
+body {
+    margin: 0;
+    background-color: #ff8;
+}
+
+/* === Fonts === */
+
+@font-face {
+    font-family: Roboto;
+    src: url(../static/fonts/Roboto-Regular.ttf);
+}
+
+/* === Navigation bar === */
+
+#nav-bar {
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    --logo-width: max(200px, min(20vw, 400px));
+    grid-template-columns: var(--logo-width) auto;
+    justify-content: space-between;
+}
+#nav-bar-logo {
+    width: var(--logo-width);
+}
+#nav-bar-links {
+    position: relative;
+    display: none;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+#nav-bar-links.expanded {
+    display: flex;
+}
+.nav-bar-link {
+    display: inline-block;
+    position: relative;
+    padding: .2vh calc(var(--logo-width) / 20);
+    text-decoration: none;
+    color: black;
+    font-size: calc(var(--logo-width) / 10);
+    font-weight: bolder;
+    font-family: Roboto;
+}
+.nav-bar-link:hover:nth-child(2n + 1) {
+    color: var(--club-purple);
+}
+.nav-bar-link:hover:nth-child(2n) {
+    color: var(--club-blue);
+}
+
+@media screen and (min-width: 600px) {
+    #nav-bar {
+        justify-content: start;
+    }
+    #nav-bar-expand {
+        display: none;
+    }
+    #nav-bar-links {
+        display: inline-flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .nav-bar-link {
+        padding: 0 2vw;
+    }
+}
