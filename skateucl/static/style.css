@@ -26,13 +26,26 @@ body {
     background-color: #fff;
     width: 100%;
     overflow: hidden;
+    box-shadow: #000 0 -1px 10px;
     display: grid;
     --logo-width: max(200px, min(20vw, 400px));
+    --font-size: calc(var(--logo-width) / 10);
     grid-template-columns: var(--logo-width) auto;
     justify-content: space-between;
+    align-items: center;
 }
 #nav-bar-logo {
     width: var(--logo-width);
+}
+#nav-bar-expander {
+    border: none;
+    background-color: transparent;
+    background-image: url(img/expander\ button.svg);
+    cursor: pointer;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    translate: -100% 0;
 }
 
 #nav-bar-options {
@@ -48,10 +61,10 @@ body {
 .nav-bar-option {
     display: inline-block;
     position: relative;
-    padding: .2vh calc(var(--logo-width) / 20);
+    padding: .2vh calc(var(--font-size) / 2);
     text-decoration: none;
     color: black;
-    font-size: calc(var(--logo-width) / 10);
+    font-size: var(--font-size);
     font-weight: bolder;
     font-family: Roboto;
 }
@@ -66,7 +79,7 @@ body {
 }
 
 .nav-bar-option.active {
-    text-decoration: underline var(--highlight-colour) calc(var(--logo-width) / 67);
+    text-decoration: underline var(--highlight-colour) calc(var(--font-size) / 6);
     text-underline-offset: 4px;
     cursor: default;
 }
@@ -75,7 +88,7 @@ body {
     #nav-bar {
         justify-content: start;
     }
-    #nav-bar-expand {
+    #nav-bar-expander {
         display: none;
     }
     #nav-bar-options {
@@ -90,7 +103,7 @@ body {
         padding: 0 2vw;
     }
     .nav-bar-option.active {
-        text-underline-offset: calc(var(--logo-width) / 32);
+        text-underline-offset: calc(var(--font-size) / 3);
         text-underline-position: below;
     }
 }

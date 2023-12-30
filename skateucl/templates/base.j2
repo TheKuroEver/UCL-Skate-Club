@@ -17,8 +17,8 @@
 </head>
 <body>
     <header id="nav-bar">
-        <img id="nav-bar-logo" src="{{ url_for('static', filename='logo.png') }}" alt="The SkateUCL logo.">
-        <button type="button" id="nav-bar-expand" onclick="document.getElementById('nav-bar-options').classList.toggle('expanded')">button</button>
+        <img id="nav-bar-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="The SkateUCL logo.">
+        <button type="button" id="nav-bar-expander" onclick="document.getElementById('nav-bar-options').classList.toggle('expanded')"></button>
         <nav id="nav-bar-options">
             {{ nav_bar_option("index", "Home")|safe }}
             {{ nav_bar_option("index", "Events")|safe }}
