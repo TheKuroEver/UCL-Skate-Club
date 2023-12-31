@@ -26,6 +26,18 @@
             {{ nav_bar_option("index", "Join us")|safe }}
         </nav>
     </header>
-    <h1>{% block heading %}{{ self.title() }}{% endblock %}</h1>
+    <main id="main-content" class="wrapper">
+        <header id="main-heading-container" style="background-image: url({% block header_image_url required %}{% endblock %});">
+            <h1 id="main-heading">{% block heading %}{{ self.title() }}{% endblock %}</h1>
+        </header>
+        <div id="main-body">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+        </div>
+    </main>
+    <footer id="footer" class="wrapper">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus, commodi repudiandae facere iusto veniam eveniet maiores impedit eius. Molestias, obcaecati quis deserunt sapiente dolorum provident maiores. At, consequuntur aliquam. Unde!
+        <hr>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque laboriosam minima blanditiis aperiam unde aliquid. Corrupti, distinctio aliquid reprehenderit beatae totam mollitia assumenda quia harum incidunt! Quae quibusdam beatae adipisci.
+    </footer>
 </body>
 </html>
