@@ -1,8 +1,14 @@
+{% macro link(endpoint, label, class, internal=True) %}
+    {% if internal %}
+        {% set endpoint = url_for(endpoint) %}
+    {% endif %}
+    <a href="{{ endpoint }}" class="{{ class }}">{{ label }}</a>
+{% endmacro %}
 {% macro nav_bar_option(endpoint, label) %}
     {% if active == label %}
         <span class="nav-bar-option active">{{ label }}</span>
     {% else %}
-        <a href="{{ url_for(endpoint) }}" class="nav-bar-option link">{{ label }}</a>
+        {{ link(endpoint, label, "nav-bar-option link") }}
     {% endif %}
 {% endmacro %}
 <!DOCTYPE html>
@@ -35,12 +41,30 @@
         </header>
         <div id="main-body">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
         </div>
     </main>
     <footer id="footer" class="wrapper">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus, commodi repudiandae facere iusto veniam eveniet maiores impedit eius. Molestias, obcaecati quis deserunt sapiente dolorum provident maiores. At, consequuntur aliquam. Unde!
+        <h6 class="footer-heading">Contact us:</h6>
+        <nav class="footer-list">
+            <span>{{ link("mailto:su.skate-club@ucl.ac.uk", "Email", internal=False) }}</span>
+            <span>{{ link("https://www.instagram.com/skateucl/", "Instagram", internal=False) }}</span>
+            <span>{{ link("https://chat.whatsapp.com/FS8wBuXy0I513yhOeaIkqx", "Whatsapp Group Chat", internal=False) }}</span>
+        </nav>
         <hr>
-        <p>Copyright © 2024 UCL Skate Club</p>
+        <nav id="footer-legal-links" class="footer-list">
+            <span>Copyright © 2024 UCL Skate Club</span>
+            <span>{{ link("index", "Disclaimer", "footer-legal-link") }}</span>
+            <span>{{ link("index", "Privacy", "footer-legal-link") }}</span>
+        </nav>
     </footer>
 </body>
 </html>
