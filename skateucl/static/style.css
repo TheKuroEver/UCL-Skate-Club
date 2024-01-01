@@ -1,9 +1,8 @@
 /* === Colours === */
 
-body {
-    --club-purple: #794992;
-    --club-blue: #89D8EF;
-    --nav-active-colour: darkorange;
+:root {
+    --clr-club-purple: #794992;
+    --clr-club-blue: #89D8EF;
 }
 
 /* === Defaults === */
@@ -81,10 +80,10 @@ a:hover {
     font-weight: bolder;
 }
 .nav-bar-option:nth-child(2n + 1) {
-    --highlight-colour: var(--club-purple)
+    --highlight-colour: var(--clr-club-purple)
 }
 .nav-bar-option:nth-child(2n) {
-    --highlight-colour: var(--club-blue)
+    --highlight-colour: var(--clr-club-blue)
 }
 .nav-bar-option.link:hover {
     color: var(--highlight-colour);
@@ -150,7 +149,7 @@ a:hover {
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    background-color: var(--club-blue);
+    background-color: var(--clr-club-blue);
     padding: 5px;
     margin: 0;
     font-size: 36px;
@@ -184,7 +183,7 @@ a:hover {
 #footer {
     box-sizing: border-box;
     padding: 1rem 2vw 2rem;
-    background-color: var(--club-purple);
+    background-color: var(--clr-club-purple);
     color: white;
 }
 
