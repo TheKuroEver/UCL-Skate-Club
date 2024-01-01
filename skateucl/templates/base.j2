@@ -40,16 +40,13 @@
             <h1 id="main-heading">{% block heading %}{{ self.title() }}{% endblock %}</h1>
         </header>
         <div id="main-body">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti itaque ipsum ipsam dignissimos rerum ut sequi nisi sed beatae, libero neque illo dolores? Animi magnam soluta esse voluptatem ducimus?</p>
+            {% block content %}
+                <section class="text-section">
+                    <h2>Not implemented</h2>
+                    <p>Looks like this page has not been implemented yet.</p>
+                    <p>Override the <code>content</code> block in the template.</p>
+                </section>
+            {% endblock %}
         </div>
     </main>
     <footer id="footer" class="wrapper">
