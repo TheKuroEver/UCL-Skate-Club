@@ -17,14 +17,16 @@
 </head>
 <body>
     <header id="nav-bar">
-        <img id="nav-bar-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="The SkateUCL logo.">
-        <button type="button" id="nav-bar-expander" onclick="document.getElementById('nav-bar-options').classList.toggle('expanded')"></button>
-        <nav id="nav-bar-options">
-            {{ nav_bar_option("index", "Home")|safe }}
-            {{ nav_bar_option("index", "Events")|safe }}
-            {{ nav_bar_option("index", "Equipment")|safe }}
-            {{ nav_bar_option("index", "Join us")|safe }}
-        </nav>
+        <div id="nav-bar-expander">
+            <img id="nav-bar-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="The SkateUCL logo.">
+            <nav id="nav-bar-options">
+                {{ nav_bar_option("index", "Home")|safe }}
+                {{ nav_bar_option("index", "Events")|safe }}
+                {{ nav_bar_option("index", "Equipment")|safe }}
+                {{ nav_bar_option("index", "Join us")|safe }}
+            </nav>
+        </div>
+        <button type="button" id="nav-bar-expander-button" onclick="document.getElementById('nav-bar-options').classList.toggle('expanded')"></button>
     </header>
     <main id="main-content" class="wrapper">
         <header id="main-heading-container" style="background-image: url({% block header_image_url required %}{% endblock %});">
