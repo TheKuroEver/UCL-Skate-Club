@@ -30,10 +30,9 @@ a:hover {
 
 /* === Navigation bar === */
 
-#nav-bar {
+.nav-bar {
     background-color: #fff;
     width: 100%;
-    /* overflow: hidden; */
     box-shadow: #000 0 -1px 10px;
     display: flex;
     position: relative;
@@ -41,15 +40,15 @@ a:hover {
     --font-size: clamp(1.2rem, 1.2rem + 2 * (1vw - 6px), 2.5rem);
     justify-content: space-between;
 }
-#nav-bar-logo {
+.nav-bar__logo {
     height: 3rem;
 }
-#nav-bar-expander {
+.nav-bar__expander {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
-#nav-bar-expander-button {
+.nav-bar__expander-button {
     border: none;
     background-color: transparent;
     background-image: url(img/expander\ button.svg);
@@ -59,18 +58,18 @@ a:hover {
     padding: 0;
 }
 
-#nav-bar-options {
+.nav-bar__options {
     position: relative;
     display: none;
     justify-content: flex-start;
     flex-direction: column;
 }
-#nav-bar-options.expanded {
+.nav-bar__options.expanded {
     display: flex;
     padding-bottom: 4px;
     background-color: #fffd;
 }
-.nav-bar-option {
+.nav-bar__option {
     display: inline-block;
     position: relative;
     padding: 1rem calc(var(--font-size) / 2);
@@ -79,47 +78,47 @@ a:hover {
     font-size: var(--font-size);
     font-weight: bolder;
 }
-.nav-bar-option:nth-child(2n + 1) {
+.nav-bar__option:nth-child(2n + 1) {
     --highlight-colour: var(--clr-club-purple)
 }
-.nav-bar-option:nth-child(2n) {
+.nav-bar__option:nth-child(2n) {
     --highlight-colour: var(--clr-club-blue)
 }
-.nav-bar-option.link:hover {
+.nav-bar__option.link:hover {
     color: var(--highlight-colour);
     text-decoration: none;
 }
 
-.nav-bar-option.active {
+.nav-bar__option.active {
     text-decoration: underline var(--highlight-colour) calc(var(--font-size) / 6);
     text-underline-offset: 4px;
     cursor: default;
 }
 
 @media screen and (min-width: 600px) {
-    #nav-bar-logo {
+    .nav-bar__logo {
         height: 100%;
     }
-    #nav-bar-expander {
+    .nav-bar__expander {
         flex-direction: row;
     }
-    #nav-bar-expander-button {
+    .nav-bar__expander-button {
         display: none;
     }
 
-    #nav-bar-options {
+    .nav-bar__options {
         display: inline-flex;
         align-items: center;
         flex-direction: row;
     }
-    #nav-bar-options.expanded {
+    .nav-bar__options.expanded {
         padding-bottom: 0;
         background-color: #0000;
     }
-    .nav-bar-option {
+    .nav-bar__option {
         padding: 0 calc(.1rem + 2vw);
     }
-    .nav-bar-option.active {
+    .nav-bar__option.active {
         text-underline-offset: calc(var(--font-size) / 3);
         text-underline-position: below;
     }
@@ -133,7 +132,7 @@ a:hover {
     margin: 0 auto;
 }
 
-#main-heading-container {
+.main-heading {
     z-index: -1;
     width: 100%;
     height: 40vw;
@@ -144,7 +143,7 @@ a:hover {
     box-shadow: inset 0 30px 30px -30px #000,
                 inset 0 -30px 30px -30px #000;
 }
-#main-heading {
+.main-heading__text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -156,7 +155,7 @@ a:hover {
 }
 
 @media screen and (min-width: 600px) {
-    #main-heading {
+    .main-heading__text {
         top: 60%;
         left: 20%;
         translate: 0 -50%;
@@ -166,7 +165,7 @@ a:hover {
 
 /* === Content body */
 
-#main-body {
+.main-body {
     background-color: #fff;
     margin: 0;
     padding: 3rem 2vw;
@@ -180,29 +179,29 @@ a:hover {
 
 /* === Footer === */
 
-#footer {
+.footer {
     box-sizing: border-box;
     padding: 1rem 2vw 2rem;
     background-color: var(--clr-club-purple);
     color: white;
 }
 
-.footer-heading {
+.footer__heading {
     display: inline;
     font-size: inherit;
     padding-right: 1ch;
 }
-.footer-list {
+.footer__list {
     display: inline-block;
 }
-.footer-list > :nth-child(n + 2)::before {
+.footer__list > :nth-child(n + 2)::before {
     content: "•";
     padding: 0 1ch;
 }
 
-#footer-legal-links {
+.footer__legal-links {
     color: #caf;
 }
-.footer-legal-link:hover {
+.footer__legal-link:hover {
     color: #fff;
 }

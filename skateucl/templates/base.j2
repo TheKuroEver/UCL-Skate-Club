@@ -6,9 +6,9 @@
 {% endmacro %}
 {% macro nav_bar_option(endpoint, label) %}
     {% if active == label %}
-        <span class="nav-bar-option active">{{ label }}</span>
+        <span class="nav-bar__option active">{{ label }}</span>
     {% else %}
-        {{ link(endpoint, label, "nav-bar-option link") }}
+        {{ link(endpoint, label, "nav-bar__option link") }}
     {% endif %}
 {% endmacro %}
 <!DOCTYPE html>
@@ -23,45 +23,48 @@
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.svg') }}">
 </head>
 <body>
-    <header id="nav-bar">
-        <div id="nav-bar-expander">
-            <img id="nav-bar-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="The SkateUCL logo.">
-            <nav id="nav-bar-options">
+    <header class="nav-bar">
+        <div class="nav-bar__expander">
+            <img class="nav-bar__logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="The SkateUCL logo.">
+            <nav id="js-nav-bar__options" class="nav-bar__options">
                 {{ nav_bar_option("index", "Home")|safe }}
                 {{ nav_bar_option("index", "Events")|safe }}
                 {{ nav_bar_option("index", "Equipment")|safe }}
                 {{ nav_bar_option("index", "Join us")|safe }}
             </nav>
         </div>
-        <button type="button" id="nav-bar-expander-button" onclick="document.getElementById('nav-bar-options').classList.toggle('expanded')"></button>
+        <button type="button" class="nav-bar__expander-button" onclick="document.getElementById('js-nav-bar__options').classList.toggle('expanded')"></button>
     </header>
-    <main id="main-content" class="wrapper">
-        <header id="main-heading-container" style="background-image: url({% block header_image_url required %}{% endblock %});">
-            <h1 id="main-heading">{% block heading %}{{ self.title() }}{% endblock %}</h1>
-        </header>
-        <div id="main-body">
-            {% block content %}
-                <section class="text-section">
-                    <h2>Not implemented</h2>
-                    <p>Looks like this page has not been implemented yet.</p>
-                    <p>Override the <code>content</code> block in the template.</p>
-                </section>
-            {% endblock %}
-        </div>
-    </main>
-    <footer id="footer" class="wrapper">
-        <h6 class="footer-heading">Contact us:</h6>
-        <nav class="footer-list">
-            <span>{{ link("mailto:su.skate-club@ucl.ac.uk", "Email", internal=False) }}</span>
-            <span>{{ link("https://www.instagram.com/skateucl/", "Instagram", internal=False) }}</span>
-            <span>{{ link("https://chat.whatsapp.com/FS8wBuXy0I513yhOeaIkqx", "Whatsapp Group Chat", internal=False) }}</span>
-        </nav>
-        <hr>
-        <nav id="footer-legal-links" class="footer-list">
-            <span>Copyright © 2024 UCL Skate Club</span>
-            <span>{{ link("index", "Disclaimer", "footer-legal-link") }}</span>
-            <span>{{ link("index", "Privacy", "footer-legal-link") }}</span>
-        </nav>
-    </footer>
+    <div class="wrapper">
+        <main class="main">
+            <template>{% block header_image_url required %}{% endblock %}</template>
+            <header class="main-heading" style="background-image: url({{ url_for('static', filename=self.header_image_url()) }});">
+                <h1 class="main-heading__text">{% block heading %}{{ self.title() }}{% endblock %}</h1>
+            </header>
+            <div class="main-body">
+                {% block content %}
+                    <section class="text-section">
+                        <h2>Not implemented</h2>
+                        <p>Looks like this page has not been implemented yet.</p>
+                        <p>Override the <code>content</code> block in the template.</p>
+                    </section>
+                {% endblock %}
+            </div>
+        </main>
+        <footer class="footer">
+            <h6 class="footer__heading">Contact us:</h6>
+            <nav class="footer__list">
+                <span>{{ link("mailto:su.skate-club@ucl.ac.uk", "Email", internal=False) }}</span>
+                <span>{{ link("https://www.instagram.com/skateucl/", "Instagram", internal=False) }}</span>
+                <span>{{ link("https://chat.whatsapp.com/FS8wBuXy0I513yhOeaIkqx", "Whatsapp Group Chat", internal=False) }}</span>
+            </nav>
+            <hr>
+            <nav class="footer__legal-links footer__list">
+                <span>Copyright © 2024 UCL Skate Club</span>
+                <span>{{ link("index", "Disclaimer", "footer__legal-link") }}</span>
+                <span>{{ link("index", "Privacy", "footer__legal-link") }}</span>
+            </nav>
+        </footer>
+    </div>
 </body>
 </html>
