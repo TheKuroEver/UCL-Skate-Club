@@ -163,18 +163,77 @@ a:hover {
     }
 }
 
-/* === Content body */
-
 .main-body {
     background-color: #fff;
     margin: 0;
-    padding: 3rem 2vw;
 }
 
-.text-section {
+/* === Content body === */
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    gap: 3rem;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    max-width: 1300px;
+    column-gap: 2rem;
+    padding: 0 calc(1rem + 1vw);
+}
+
+.content-section-separator {
+    display: none;
+    width: 100%;
+}
+
+@media screen and (min-width: 760px) {
+    .content-section {
+        flex-direction: row;
+    }
+    .content-section--reverse {
+        flex-direction: row-reverse;
+    }
+
+    .content-section-separator {
+        display: inline;
+    }
+}
+
+.content {
+    flex: 1;
+}
+.content--text {
     max-width: 75ch;
-    margin: 0 auto;
-    padding: 0 1rem;
+}
+.content--wide {
+    flex: 2;
+}
+
+.figure {
+    background-color: var(--clr-club-purple);
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: #888 0 0 5px 0;
+    margin: 1rem 0;
+    text-align: center;
+    max-width: 400px;
+}
+.figure__image {
+    width: 100%;
+    display: block;
+}
+.figure__caption {
+    padding-top: .3rem;
+    padding-bottom: .3rem;
 }
 
 /* === Footer === */
