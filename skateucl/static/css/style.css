@@ -1,24 +1,60 @@
-/* === Colours === */
+/* === Reset === */
+/* Based on Josh Comeau's reset: https://www.joshwcomeau.com/css/custom-css-reset/ */
 
-:root {
-    --clr-club-purple: #794992;
-    --clr-club-blue: #89D8EF;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
-
-/* === Defaults === */
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     margin: 0;
     background-color: #eee;
     font-family: Roboto;
+    hanging-punctuation: first last;
+
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+p {
+    text-wrap: pretty;
+    max-width: 75ch;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+h2 {
+    margin-top: 2rem;
+}
+p {
+    margin-top: 1rem;
 }
 
 a {
     color: inherit;
 }
 
-img {
-    display: block;
+/* === Colours === */
+
+:root {
+    --clr-club-purple: #794992;
+    --clr-club-blue: #89D8EF;
 }
 
 /* === Fonts === */
@@ -41,7 +77,7 @@ img {
     justify-content: space-between;
 }
 .nav-bar__logo {
-    height: 3rem;
+    height: 100%;
 }
 .nav-bar__expander {
     display: flex;
@@ -66,7 +102,6 @@ img {
 }
 .nav-bar__options.expanded {
     display: flex;
-    padding-bottom: 4px;
     background-color: #fffd;
 }
 .nav-bar__option {
@@ -96,9 +131,6 @@ img {
 }
 
 @media screen and (min-width: 600px) {
-    .nav-bar__logo {
-        height: 100%;
-    }
     .nav-bar__expander {
         flex-direction: row;
     }
@@ -112,7 +144,6 @@ img {
         flex-direction: row;
     }
     .nav-bar__options.expanded {
-        padding-bottom: 0;
         background-color: #0000;
     }
     .nav-bar__option {
@@ -140,8 +171,7 @@ img {
     position: relative;
     background-size: cover;
     background-position: center;
-    box-shadow: inset 0 30px 30px -30px #000,
-                inset 0 -30px 30px -30px #000;
+    box-shadow: inset 0 30px 30px -30px #000, inset 0 -30px 30px -30px #000;
 }
 .main-heading__text {
     position: absolute;
@@ -200,7 +230,7 @@ img {
     }
     .content-secion--vertical {
         flex-direction: column;
-    }    
+    }
     .content-section--reverse {
         flex-direction: row-reverse;
     }
@@ -212,9 +242,6 @@ img {
 
 .content {
     flex: 1;
-}
-.content--text {
-    max-width: 75ch;
 }
 .content--wide {
     flex: 2;
@@ -232,7 +259,6 @@ img {
 }
 .figure__image {
     width: 100%;
-    display: block;
 }
 .figure__caption {
     padding-top: .3rem;
@@ -242,8 +268,7 @@ img {
 /* === Footer === */
 
 .footer {
-    box-sizing: border-box;
-    padding: 1rem 2vw 2rem;
+    padding: 1rem 2vw;
     background-color: var(--clr-club-purple);
     color: white;
 }
@@ -255,6 +280,7 @@ img {
 }
 .footer__list {
     display: inline-block;
+    margin-block: .5rem;
 }
 .footer__list > :nth-child(n + 2)::before {
     content: "•";
@@ -272,7 +298,7 @@ img {
     text-decoration: underline;
 }
 
-/* === Utils */
+/* === Utils === */
 
 .soft-shadow {
     box-shadow: #888 0 0 5px 0;

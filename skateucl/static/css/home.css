@@ -12,13 +12,14 @@
 
 .committee__title {
     flex: 1;
+    margin: 0;
     text-align: center;
 }
 
 .committee__menu {
-    padding: 0;
     flex: 1;
     display: flex;
+    margin-block: 1rem;
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
