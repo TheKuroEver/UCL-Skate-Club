@@ -1,14 +1,11 @@
-{% macro link(endpoint, label, class, internal=True) %}
-    {% if internal %}
-        {% set endpoint = url_for(endpoint) %}
-    {% endif %}
-    <a href="{{ endpoint }}" class="{{ class }}">{{ label }}</a>
+{% macro internal_link(endpoint, label, class) %}
+    <a href="{{ url_for(endpoint) }}" class="{{ class }}">{{ label }}</a>
 {% endmacro %}
 {% macro nav_bar_option(endpoint, label) %}
     {% if active == label %}
         <span class="nav-bar__option active">{{ label }}</span>
     {% else %}
-        {{ link(endpoint, label, "nav-bar__option link") }}
+        {{ internal_link(endpoint, label, "nav-bar__option link") }}
     {% endif %}
 {% endmacro %}
 <!DOCTYPE html>
@@ -54,15 +51,15 @@
         <footer class="footer">
             <h6 class="footer__heading">Contact us:</h6>
             <nav class="footer__list">
-                <span>{{ link("mailto:su.skate-club@ucl.ac.uk", "Email", internal=False) }}</span>
-                <span>{{ link("https://www.instagram.com/skateucl/", "Instagram", internal=False) }}</span>
-                <span>{{ link("https://chat.whatsapp.com/FS8wBuXy0I513yhOeaIkqx", "Whatsapp Group Chat", internal=False) }}</span>
+                <span><a href="mailto:su.skate-club@ucl.ac.uk" class="footer__link">Email</a></span>
+                <span><a href="https://www.instagram.com/skateucl/" class="footer__link">Instagram</a></span>
+                <span><a href="https://chat.whatsapp.com/FS8wBuXy0I513yhOeaIkqx" class="footer__link">Whatsapp Group Chat</a></span>
             </nav>
             <hr>
             <nav class="footer__legal-links footer__list">
                 <span>Copyright © 2024 UCL Skate Club</span>
-                <span>{{ link("index", "Disclaimer", "footer__legal-link") }}</span>
-                <span>{{ link("index", "Privacy", "footer__legal-link") }}</span>
+                <span>{{ internal_link("index", "Disclaimer", "footer__link") }}</span>
+                <span>{{ internal_link("index", "Privacy", "footer__link") }}</span>
             </nav>
         </footer>
     </div>
