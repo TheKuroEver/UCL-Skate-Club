@@ -1,0 +1,50 @@
+[
+    {
+        "Name": "Mariusz",
+        "Role": "Inline Skating Captain, Equipment Officer",
+        "Course": "Mathematics 2nd Year",
+        "About": "Hi! I'm Mariusz, been skating ('properly') since the start of 2022 and I'm always trying to learn new things. Recently I have been trying to learn the 'Magic' slide!",
+        "Other": [
+            {
+                "Heading": "Skill",
+                "Content": "I can skate sideways in one direction :]"
+            },
+            {
+                "Heading": "Weakness",
+                "Content": "I cannot skate sideways in the other direction :["
+            },
+            {
+                "Heading": "Memorable skating experience",
+                "Content": "I skated down the big hill at Greenwich Park once without dying!"
+            },
+            {
+                "Heading": "Fun fact",
+                "Content": "I made this website!"
+            }
+        ]
+    },
+    {
+        "Name": "Another",
+        "Role": "Different Officer",
+        "Course": "Course Some Year",
+        "About": "Hi! I'm not Mariusz!",
+        "Other": [
+            {
+                "Heading": "Skill",
+                "Content": "Some"
+            },
+            {
+                "Heading": "Weakness",
+                "Content": "Some others"
+            },
+            {
+                "Heading": "Favourite food",
+                "Content": "Potatoes"
+            },
+            {
+                "Heading": "Fun fact",
+                "Content": "I love cats!"
+            }
+        ]
+    }
+]

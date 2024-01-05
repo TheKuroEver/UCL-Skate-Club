@@ -6,15 +6,40 @@
     Meet our committee members, see upcoming events, reserve equipment, and more!
 {% endblock %}
 
+{% set scripts = ["committee profile viewer"] %}
+{% set extra_stylesheet = "home" %}
+{% set active = "Home" %}
 {% block header_image_url %}img/Placeholder image.png{% endblock %}
 
 {% block content %}
     <section class="content-section">
         <div class="content content--wide content--text">
             <h2>Welcome to Skate Club at UCL!</h2>
+            <p>Hi! Having been founded in 2022, SkateUCL is one of the newest clubs in the union! We are multidisciplinary, celebrating all forms of skating (although if you are looking for ice skating, see <a href="https://studentsunionucl.org/clubs-societies/ice-club">Ice Club</a> instead). We have representatives in four big areas — inline skating, quad skating, skateboarding, and longboarding — who are here to support you in your skating endeavours.</p>
+            <p>We typically run two skate sessions per week, no commitment required, drop in whenever you'd like. Whether you're a complete beginner or have been skating for years, you can look forward to peer-led training for beginners, practice sessions to learn some tricks, and collab sessions with other skate groups.</p>
+            <p>Our members often share equipment with one another, and we have some (albeit limited) equipment available to borrow in-session, so there's no reason not to try!</p>
         </div>
     </section>
     <hr class="content-section-separator">
+    <section class="content-section">
+        <div class="content committee">
+            <div class="committee__header">
+                <div class="committee__title">
+                    <h2>Meet our committee members!</h2>
+                    <p>Click on a member to get more information.</p>
+                </div>
+                <menu class="committee__menu">
+                    {% for profile in committee_profiles %}
+                        <button class="js-committee__button committee__button soft-shadow" data-member-profile='{{ profile.data|e }}'>
+                            <img class="committee__button-image" src="{{ url_for('static', filename='img/committee/' + profile.name + '.png') }}" alt="{{ profile.name }}">
+                            <p class="committee__button-label">{{ profile.name }}</p>
+                        </button>
+                    {% endfor %}
+                </menu>
+            </div>
+            <div class="committee__display soft-shadow">
+                
+            </div>
         </div>
     </section>
 {% endblock %}

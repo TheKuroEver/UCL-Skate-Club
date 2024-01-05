@@ -1,0 +1,65 @@
+.committee__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 1000px) {
+    .committee__header {
+        flex-direction: row;
+    }
+}
+
+.committee__title {
+    flex: 1;
+    text-align: center;
+}
+
+.committee__menu {
+    padding: 0;
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.committee__button {
+    background-color: black;
+    border: none;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --_transition-time: .2s
+}
+.committee__button-image {
+    width: 100%;
+    height: 100%;
+    transition: var(--_transition-time);
+}
+.committee__button-label {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    color: #0000;
+    font-weight: bold;
+    transition: var(--_transition-time);
+}
+.committee__button:hover > .committee__button-label {
+    color: #fff;
+}
+.committee__button:hover > .committee__button-image {
+    opacity: 50%;
+}
+
+.committee__display {
+    width: 100%;
+    height: 100px;
+    border-radius: 25px;
+}

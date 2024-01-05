@@ -18,6 +18,12 @@
     <title>{% block title required %}{% endblock %} — SkateUCL</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.svg') }}">
+    {% if extra_stylesheet %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/' + extra_stylesheet + '.css') }}">
+    {% endif %}
+    {% for script in scripts %}
+        <script src="{{ url_for('static', filename='js/' + script + '.js') }}"></script>
+    {% endfor %}
 </head>
 <body>
     <header class="nav-bar">

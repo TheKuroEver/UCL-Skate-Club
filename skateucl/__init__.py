@@ -1,4 +1,5 @@
 import os
+import json
 
 from flask import Flask, render_template
 
@@ -21,8 +22,15 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    committee_member_profiles = get_committee_profiles(app)
+
     @app.route("/")
     def index():
-        return render_template("index.j2", active="Home")
+        return render_template("index.j2", committee_profiles=committee_member_profiles)
 
     return app
+
+
+def get_committee_profiles(app):
+    path = os.path.join(app.static_folder, "json/committee.json")
+    return tuple({"name": obj["Name"], "data": json.dumps(obj)} for obj in json.load(open(path)))
