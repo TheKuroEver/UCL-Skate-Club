@@ -43,7 +43,7 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Flask stuff:
+# Flask stuff
 instance/
 .webassets-cache
 
@@ -58,3 +58,6 @@ venv.bak/
 
 # vscode
 .vscode
+
+# Compiled assets
+gen/

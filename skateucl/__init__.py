@@ -2,15 +2,16 @@ import os
 import json
 
 from flask import Flask, render_template
+from flask_assets import Environment, Bundle
 
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+
     app.config.from_mapping(
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "skateucl.sqlite"),
     )
-
     if test_config is None:
         app.config.from_pyfile("config.py", silent=True)
     else:
@@ -21,6 +22,12 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    assets = Environment(app)
+    js = Bundle("js/committee profile viewer.js", filters="rjsmin", output="gen/packed.js")
+    css = Bundle("css/style.css", "css/home.css", filters="rcssmin", output="gen/packed.css")
+    assets.register("js_all", js)
+    assets.register("css_all", css)
 
     committee_member_profiles = get_committee_profiles(app)
 
